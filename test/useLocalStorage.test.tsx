@@ -24,8 +24,7 @@ describe("useLocalStorage", () => {
     //verify the actual value from localStorage and the return from the hook
     expect(actual).toBe(expected);
     expect(actual).toBe(valueFromHook);
-    console.log("zzz");
-    expect(exception).toBe(undefined);
+    expect(exception).toBe(null);
 
     //update local storage entry using hook
     act(() => {
