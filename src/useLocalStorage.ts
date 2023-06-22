@@ -2,10 +2,21 @@ import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
 type SetValue<T> = Dispatch<SetStateAction<T>>;
 
-const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>] => {
+const useLocalStorage = <T>(
+  key: string,
+  initialValue: T
+): [T, SetValue<T>, null | { error: string }] => {
+  let exception = null;
   const [value, setValue] = useState<T>(() => {
     const storedValue = localStorage.getItem(key);
-    return storedValue !== null ? JSON.parse(storedValue) : initialValue;
+    if (storedValue === null) {
+      return initialValue;
+    } else {
+      exception = {
+        error: `Cannot recreate existing key: ${initialValue}`,
+      };
+      return JSON.parse(storedValue);
+    }
   });
 
   useEffect(() => {
@@ -16,7 +27,7 @@ const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>] => {
     setValue(newValue);
   };
 
-  return [value, updateValue];
+  return [value, updateValue, exception];
 };
 
 export default useLocalStorage;
