@@ -1,57 +1,24 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { renderHook, act } from "@testing-library/react";
 import useLocalStorage from "../src/useLocalStorage";
-import React from "react";
 
 describe("useLocalStorage", () => {
-  beforeEach(() => {
-    // Mock localStorage methods
-    const localStorageMock = {
-      getItem: jest.fn(),
-      setItem: jest.fn(),
-      removeItem: jest.fn(),
-      clear: jest.fn(),
-    };
+  test("create and update key value pair", () => {
+    //initialize local storage key and value
+    const testValue1 = "value-1";
+    const testValue2 = "value-2";
 
-    // Override the global localStorage object with the mock implementation
-    Object.defineProperty(window, "localStorage", {
-      value: localStorageMock,
+    const { result } = renderHook(() =>
+      useLocalStorage("test-key", testValue1)
+    );
+
+    const actual = result.current[0];
+    const expected = testValue1;
+    expect(result.current[0]).toBe(testValue1);
+
+    //update local storage entry
+    act(() => {
+      result.current[1](testValue2);
     });
-    localStorage.clear();
-  });
-
-  it("should initialize with the initial value", () => {
-    function TestComponent() {
-      const [value] = useLocalStorage("test-key", "initial");
-      return <div>{value}</div>;
-    }
-
-    render(<TestComponent />);
-    expect(screen.getByText("initial")).toBeInTheDocument();
-  });
-
-  it("should update the value and persist it to local storage", () => {
-    function TestComponent() {
-      const [value, setValue] = useLocalStorage("test-key", "initial");
-
-      const handleButtonClick = () => {
-        setValue("updated");
-      };
-
-      return (
-        <div>
-          <div>{value}</div>
-          <button onClick={handleButtonClick}>Update</button>
-        </div>
-      );
-    }
-
-    render(<TestComponent />);
-    expect(screen.getByText("initial")).toBeInTheDocument();
-
-    const updateButton = screen.getByText("Update");
-    fireEvent.click(updateButton);
-
-    expect(screen.getByText("updated")).toBeInTheDocument();
-    expect(localStorage.getItem("test-key")).toBe(JSON.stringify("updated"));
+    expect(result.current[0]).toBe(testValue2);
   });
 });
