@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: ["main"]
+    branches: [main]
   pull_request:
-    branches: ["main"]
+    branches: [main]
 
 jobs:
   build:
@@ -29,18 +29,21 @@ jobs:
       - run: npm run build --if-present
       - run: npm test
 
-      coverage:
-        needs: [test]
-        name: Code Coverage
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: 16
-            - run: npm install
-            - uses: paambaati/codeclimate-action@v3.0.0
-              env:
-                  CC_TEST_REPORTER_ID: ${{ secrets.TEST_REPORTER_ID }}
-              with:
-                  coverageCommand: yarn test
+  coverage:
+    needs: build
+    name: Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 12
+      - run: npm install -g yarn
+      - run: yarn install
+      - run: yarn build
+      - uses: paambaati/codeclimate-action@v4
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.TEST_REPORTER_ID }}
+        with:
+          coverageCommand: yarn run coverage
+          debug: true
