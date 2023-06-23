@@ -20,7 +20,7 @@ describe("useLocalStorage", () => {
 
     const actual = JSON.parse(localStorage.getItem(testKey));
     const expected = testValue1;
-
+    console.log("zz");
     //verify the actual value from localStorage and the return from the hook
     expect(actual).toBe(expected);
     expect(actual).toBe(valueFromHook);
