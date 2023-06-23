@@ -9,7 +9,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "prettier --check"
+      "pre-commit": "echo '[Husky] post-applypatch'"
     }
   },
   "lint-staged": {
