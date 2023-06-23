@@ -49,9 +49,7 @@ describe("useLocalStorage", () => {
     const testValue2 = "value-2";
 
     const { result } = renderHook(() => useLocalStorage(testKey, testValue1));
-    console.log(result);
 
-    const localStorageSetter = result.current[1];
     const valueFromHook = result.current[0];
     const exception = result.current[2];
 
