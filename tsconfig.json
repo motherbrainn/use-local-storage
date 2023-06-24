@@ -17,6 +17,9 @@
     // go to js file when using IDE functions like
     // "Go to Definition" in VSCode
     "declarationMap": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "node"
   }
 }
