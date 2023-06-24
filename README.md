@@ -5,6 +5,9 @@
 
 A lightweight hook for client side apps that makes storing and modifying data in local storage as easy as setting state.
 
+## Install
+`npm install @motherbrainn/use-local-storage`
+
 ## How To Use
 ```
 import { useLocalStorage } from "@motherbrainn/use-local-storage";
