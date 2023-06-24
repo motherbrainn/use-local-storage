@@ -9,8 +9,15 @@ type SetValue<T> = Dispatch<SetStateAction<T>>;
  * @param initialValue initial value for local storage instance
  * @returns current value, setter function, and exception object
  */
-declare const useLocalStorage: <T>(key: string, initialValue: T) => [T, SetValue<T>, {
+declare const useLocalStorage: <T>(
+  key: string,
+  initialValue: T
+) => [
+  T,
+  SetValue<T>,
+  {
     error: string;
-}];
+  }
+];
 export default useLocalStorage;
 //# sourceMappingURL=useLocalStorage.d.ts.map
