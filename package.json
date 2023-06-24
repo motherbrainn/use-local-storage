@@ -5,7 +5,8 @@
   "scripts": {
     "test": "jest --coverage",
     "lint": "prettier --check .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build": "tsc"
   },
   "author": "motherbrainn",
   "license": "ISC",
