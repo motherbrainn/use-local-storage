@@ -5,7 +5,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@motherbrainn/use-local-storage": ["index.ts"]
+      "@motherbrainn/use-local-storage/*": ["index.ts"]
     },
     // Tells TypeScript to read JS files, as
     // normally they are ignored as source files
