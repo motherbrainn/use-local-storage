@@ -37,6 +37,9 @@
     "declaration": true,
     "outDir": "dist",
     "baseUrl": ".",
+    "paths": {
+      "@motherbrainn/use-local-storage/*": ["./index.js"]
+    },
     "esModuleInterop": true,
     "strict": true
   },
