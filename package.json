@@ -38,5 +38,8 @@
     "url": "https://github.com/motherbrainn/use-local-storage/issues"
   },
   "homepage": "https://github.com/motherbrainn/use-local-storage#readme",
-  "description": ""
+  "description": "",
+  "files": [
+    "dist/*"
+  ]
 }
