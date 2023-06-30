@@ -2,6 +2,10 @@
   "name": "@motherbrainn/use-local-storage",
   "version": "1.1.18",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest --coverage",
     "lint": "prettier --check .",
@@ -40,9 +44,6 @@
   },
   "homepage": "https://github.com/motherbrainn/use-local-storage#readme",
   "description": "",
-  "files": [
-    "dist/*"
-  ],
   "exports": {
     ".": "./dist/index.js"
   }
