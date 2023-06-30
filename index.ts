@@ -1,3 +1,3 @@
 import useLocalStorage from "./src/useLocalStorage";
 
-export { useLocalStorage };
+export default useLocalStorage;
