@@ -6,7 +6,7 @@
     "test": "jest --coverage",
     "lint": "prettier --check .",
     "format": "prettier --write .",
-    "build": "tsc"
+    "prepublish": "tsc"
   },
   "author": "motherbrainn",
   "license": "ISC",
