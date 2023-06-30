@@ -41,5 +41,9 @@
   "description": "",
   "files": [
     "dist/*"
-  ]
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./src/useLocalStorage": "./dist/index.js"
+  }
 }
