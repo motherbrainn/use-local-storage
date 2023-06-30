@@ -1,6 +1,6 @@
 {
   "name": "@motherbrainn/use-local-storage",
-  "version": "1.1.16",
+  "version": "1.1.15",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest --coverage",
@@ -44,6 +44,7 @@
     "dist/*"
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./src/useLocalStorage": null
   }
 }
