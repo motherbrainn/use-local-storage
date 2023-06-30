@@ -44,7 +44,6 @@
     "dist/*"
   ],
   "exports": {
-    ".": "./dist/index.js",
-    "./src/useLocalStorage": "./dist/index.js"
+    ".": "./dist/index.js"
   }
 }
