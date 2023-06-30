@@ -6,7 +6,8 @@
     "test": "jest --coverage",
     "lint": "prettier --check .",
     "format": "prettier --write .",
-    "prepublish": "tsc"
+    "prepublish": "tsc",
+    "release:patch": "npm version patch && npm publish --access public"
   },
   "author": "motherbrainn",
   "license": "ISC",
