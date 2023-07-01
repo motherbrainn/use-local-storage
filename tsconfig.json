@@ -1,48 +1,31 @@
-// {
-//   // Change this to match your project
-//   "include": ["index.ts"],
-//   "exclude": ["dist/src/**/*"],
-//   "compilerOptions": {
-//     "baseUrl": ".",
-//     "paths": {
-//       "@motherbrainn/use-local-storage/*": ["index.ts"]
-//     },
-//     // Tells TypeScript to read JS files, as
-//     // normally they are ignored as source files
-//     "allowJs": true,
-//     // Generate d.ts files
-//     "declaration": true,
-//     // This compiler run should
-//     // only output d.ts files
-//     "emitDeclarationOnly": false,
-//     // Types should go into this directory.
-//     // Removing this would place the .d.ts files
-//     // next to the .js files
-//     "outDir": "dist",
-//     // go to js file when using IDE functions like
-//     // "Go to Definition" in VSCode
-//     "declarationMap": true,
-//     "esModuleInterop": true,
-//     "jsx": "react",
-//     "target": "ES6",
-//     "module": "CommonJS",
-//     "moduleResolution": "node" // Specify the output directory for JavaScript files
-//   }
-// }
-
 {
+  // Change this to match your project
+  "include": ["index.ts"],
+  "exclude": ["dist/src/**/*"],
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "declaration": true,
-    "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "@motherbrainn/use-local-storage/*": ["./index.js"]
+      "@motherbrainn/use-local-storage/*": ["index.ts"]
     },
+    // Tells TypeScript to read JS files, as
+    // normally they are ignored as source files
+    "allowJs": true,
+    // Generate d.ts files
+    "declaration": true,
+    // This compiler run should
+    // only output d.ts files
+    "emitDeclarationOnly": false,
+    // Types should go into this directory.
+    // Removing this would place the .d.ts files
+    // next to the .js files
+    "outDir": "dist",
+    // go to js file when using IDE functions like
+    // "Go to Definition" in VSCode
+    "declarationMap": true,
     "esModuleInterop": true,
-    "strict": true
-  },
-  "include": ["index.js"],
-  "exclude": ["node_modules", "dist"]
+    "jsx": "react",
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "node" // Specify the output directory for JavaScript files
+  }
 }
